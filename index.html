@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaSignal</title>
     <style>
+        @font-face {
+            font-family: 'VAG World';
+            src: url('VAGWorld.ttf') format('truetype');
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #FFEDCF;
@@ -17,7 +22,7 @@
             height: 100vh;
             text-align: center;
             position: relative;
-            overflow: hidden; /* Чтобы скрыть элементы за пределами экрана */
+            overflow: hidden;
         }
 
         /* Полукруги по бокам */
@@ -26,19 +31,19 @@
             position: absolute;
             width: 300px;
             height: 300px;
-            background-color: #F3D8A0; /* Цвет бежевого полукруга */
+            background-color: #F3D8A0;
             border-radius: 50%;
-            z-index: -1; /* Полукруги под содержимым */
+            z-index: -1;
         }
 
         body::before {
-            top: -50px; /* Сместим вверх */
-            left: -150px; /* Сместим влево */
+            top: -50px;
+            left: -150px;
         }
 
         body::after {
-            bottom: -50px; /* Сместим вниз */
-            right: -150px; /* Сместим вправо */
+            bottom: -50px;
+            right: -150px;
         }
 
         h1 {
@@ -46,20 +51,26 @@
             margin-bottom: 10px;
         }
 
+        .custom-font {
+            font-family: 'VAG World', Arial, sans-serif;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
         button {
-            background-color: #F3D8A0; /* Новый бежевый цвет */
+            background-color: #F3D8A0;
             color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             margin-top: 20px;
-            border-radius: 5px; /* Закругленные углы */
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #E6C89A; /* Более темный оттенок бежевого при наведении */
+            background-color: #E6C89A;
         }
 
         form {
@@ -67,15 +78,15 @@
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
-            max-height: 0; /* Скрываем форму */
-            overflow: hidden; /* Скрываем содержимое */
-            transition: max-height 0.5s ease, opacity 0.5s ease; /* Анимация */
-            opacity: 0; /* Прозрачность */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
         }
 
         form.visible {
-            max-height: 500px; /* Высота, достаточная для отображения всех элементов */
-            opacity: 1; /* Форма становится видимой */
+            max-height: 500px;
+            opacity: 1;
         }
 
         input, textarea {
@@ -91,7 +102,7 @@
 <body>
     <h1>+7 985-885-49-97</h1>
     <img src="novasignal.png" alt="Логотип NovaSignal" width="200">
-    <h1>Поймайте новый сигнал в мире телевидения</h1>
+    <h1 class="custom-font">Поймайте новый сигнал в мире телевидения</h1>
     <button onclick="toggleForm()">Отправить заявку</button>
 
     <form id="requestForm" method="POST" action="https://26d4-93-185-199-36.ngrok-free.app/send">
