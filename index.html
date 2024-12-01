@@ -25,7 +25,6 @@
             overflow: hidden;
         }
 
-        /* Полукруги по бокам */
         body::before, body::after {
             content: '';
             position: absolute;
@@ -61,7 +60,7 @@
             background-color: #F3D8A0;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 30px; /* Увеличены размеры кнопки */
             font-size: 16px;
             cursor: pointer;
             margin-top: 20px;
@@ -92,10 +91,16 @@
         input, textarea {
             margin: 10px 0;
             padding: 10px;
-            width: 80%;
+            width: 90%; /* Адаптивная ширина */
             max-width: 400px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        /* Кнопка внутри формы */
+        form button {
+            width: 90%; /* Кнопка адаптивная по ширине */
+            max-width: 400px;
         }
     </style>
 </head>
@@ -109,7 +114,6 @@
         <textarea name="problem" placeholder="Краткое описание проблемы" required></textarea>
         <input type="tel" name="phone" placeholder="Ваш контактный номер" required>
         <input type="text" name="address" placeholder="Ваш точный адрес" required>
-        <!-- Изменён текст кнопки на "Отправить" -->
         <button type="submit">Отправить</button>
     </form>
 
